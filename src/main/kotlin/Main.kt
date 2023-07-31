@@ -1,17 +1,22 @@
 fun main(args: Array<String>) {
-    // Elements :   5   6    8   9   10
-    // Index    :   0   1   2   3   4
+    //map data structure which store data in key value pair.
+   /*// Immutable map
+    var map = mapOf<Int, String>(5 to "Atul", 6 to "Anand", 7 to "Amit") // Read operation
+    for (mapelement in map.keys) {
+        println(map[mapelement])
+       // println(map.get(mapelement))
+    }*/
 
-//    var list = mutableListOf<String>()  // Mutable, No Fixed Size, Can Add or Remove Elements
-//    var list = arrayListOf<String>()    // Mutable, No Fixed Size, Can Add or Remove Elements
-    var list = ArrayList<String>()      // Mutable, No Fixed Size, Can Add or Remove Elements
-    list.add("Atul")        // 0
-    list.add("Anand")    // 1
-    list.add("Amit")    // 2
+    //Mutable map
+   // var Map = HashMap<Int,String>()  //// Read and write operation , no fixed size
+   //    var Map = mutableMapOf<Int, String>() // Mutable, READ and WRITE both, No Fixed Size // this return linked hash map
+    var map = hashMapOf<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
+    map.put(6,"Atul")
+    map.put(10,"Anand")
+    map.put(11,"Amit")
 
-    for (element in list) {             // Using individual elements (Objects)
-        println(element)
+    for (hashMapelement in map.keys)
+    {
+        println(map[hashMapelement])
     }
-
-
 }
