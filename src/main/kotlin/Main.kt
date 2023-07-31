@@ -4,48 +4,23 @@
 *   2. Higher-Order Function
 * */
 fun main(args: Array<String>) {
-    val program = Program()
+    val program = MYProgram()
 
-    program.addTwoNumbers(2, 7)     // Simple way... for better understanding
+//    val myLambda: (Int, Int) -> Int = { x, y -> x + y}  // Lambda Expression [ Function ]
+// OR,
+//    program.addTwoNumbers(2, 7, { x, y -> x + y })
+// OR,
+    program.addTwoNumbers(2, 7) {x, y -> x + y}
 
-    program.addTwoNumbers(2, 7, object : MyInterface {   // Using Interface / OOPs way
-
-        override fun execute(sum: Int) {
-            println(sum)    // Body
-        }
-    })
-
-    val test: String = "Hello"
-
-    val myLambda: (Int) -> Unit = { s: Int -> println(s)}   // Lambda Expression [ Function ]
-    //program.addTwoNumbers(2, 7, myLambda)
-    //program.addTwoNumbers(2, 7, {s: Int -> println(s)})
-    //program.addTwoNumbers(2, 7) { s: Int -> println(s) }
-    program.addTwoNumbers(2, 7, ::println)
 }
 
 
-class Program {
+class MYProgram {
 
-    fun addTwoNumbers(a: Int, b: Int, action: (Int) -> Unit) {  // High Level Function with Lambda as Parameter
+    fun addTwoNumbers(a: Int, b: Int, action: (Int,Int) -> Int) {  // High Level Function with Lambda as Parameter
+        val sum = action(a,b)
+        println("sum is $sum")
 
-        val sum = a + b
-        action(sum)     // println(sum)
-//        println(sum)  // Body
-    }
-
-    fun addTwoNumbers(a: Int, b: Int, action: MyInterface) {    // Using Interface / Object Oriented Way
-        val sum = a + b
-        action.execute(sum)
-    }
-
-    fun addTwoNumbers(a: Int, b: Int) {                         // Simple way.. Just for Better Understanding
-
-        val sum =  a + b
-        println(sum)
     }
 }
 
-interface MyInterface {
-    fun execute(sum: Int)
-}
