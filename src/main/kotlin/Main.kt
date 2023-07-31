@@ -1,24 +1,16 @@
 fun main(args: Array<String>) {
-    var array = Array<Int>(5){0}
-    array[0]=1
-    array[1]=2
-    array[2]=3
-    array[3]=4
-    array[4]=5
+    // Elements :   5   6    8   9   10
+    // Index    :   0   1   2   3   4
 
-   /* for (i in 0..array.size-1)
-    {
-        //println(i)
-        println(array[i])
+//    var list = mutableListOf<String>()  // Mutable, No Fixed Size, Can Add or Remove Elements
+//    var list = arrayListOf<String>()    // Mutable, No Fixed Size, Can Add or Remove Elements
+    var list = ArrayList<String>()      // Mutable, No Fixed Size, Can Add or Remove Elements
+    list.add("Atul")        // 0
+    list.add("Anand")    // 1
+    list.add("Amit")    // 2
 
-    }*/
-
-
-    for (i in 0 until array.size)
-    {
-        //println(i)
-        println(array[i])
-
+    for (element in list) {             // Using individual elements (Objects)
+        println(element)
     }
 
 
