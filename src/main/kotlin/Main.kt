@@ -1,22 +1,16 @@
 fun main(args: Array<String>) {
-    //map data structure which store data in key value pair.
-   /*// Immutable map
-    var map = mapOf<Int, String>(5 to "Atul", 6 to "Anand", 7 to "Amit") // Read operation
-    for (mapelement in map.keys) {
-        println(map[mapelement])
-       // println(map.get(mapelement))
-    }*/
+    // "Set" contains unique elements
+    // "HashSet" also contains unique elements but sequence is not guaranteed in output
+       // var mySet= setOf<Int>(2,5,7,0,8,8,8) // immutable set,Read only.
+      // var mySet = mutableSetOf<Int>( 2, 54, 3, 1, 0, 9, 9, 9, 8)  // Mutable Set, READ and WRITE both.
+       var mySet = hashSetOf<Int>( 2, 54, 3, 1, 0, 9, 9, 9, 8)     // Mutable Set, READ and WRITE both
+       mySet.remove(54)
+       mySet.add(10)
 
-    //Mutable map
-   // var Map = HashMap<Int,String>()  //// Read and write operation , no fixed size
-   //    var Map = mutableMapOf<Int, String>() // Mutable, READ and WRITE both, No Fixed Size // this return linked hash map
-    var map = hashMapOf<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
-    map.put(6,"Atul")
-    map.put(10,"Anand")
-    map.put(11,"Amit")
 
-    for (hashMapelement in map.keys)
+
+    for (hashMapelement in mySet)
     {
-        println(map[hashMapelement])
+        println(hashMapelement)
     }
 }
