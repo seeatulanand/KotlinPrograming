@@ -5,11 +5,16 @@ fun main(args: Array<String>) {
     //with
     with(program)
     {
+        //name="Atul"
+        //id="1"
         println(name)
         println(id)
     }
     //apply
     program.apply {
+
+       // name="Atul"
+       // id="1"
         println(name)
         println(id)
 
